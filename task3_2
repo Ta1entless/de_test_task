@@ -1,0 +1,15 @@
+SELECT SUM(population) AS total_population
+FROM countries
+WHERE 'English' = ANY(languages);
+
+
+SELECT subregion, COUNT(DISTINCT cca2) AS country_count
+FROM countries
+GROUP BY subregion;
+
+
+SELECT name_common, languages
+FROM countries
+WHERE array_length(languages, 1) > 1;
+
+
